@@ -3,7 +3,7 @@ import axios from 'axios';
 import Loader from '../Loader/Loader';
 import Paginate from '../Paginate/Paginate';
 import './Gif.css';
-import SelectedGif from '../App/SelectedGif/SelectedGif';
+// import SelectedGif from '../SelectedGif/SelectedGif';
 
 
 const RenderSelectedGif = ({ selectedGif }) => {
@@ -122,28 +122,39 @@ const Gif = (props) => {
 
     return(
       <div>
-          {renderError()}
-        <form>
-          <input type="text"
-                 placeholder='search'
-                 onChange={handleSearchChange}
-                 value={search}
-                >
-          </input>
-          <button onClick={handleSubmit} type="submit">GO</button>
-        </form>
-        < Paginate currentPage={currentPage}
-                   itemsPerPage={itemsPerPage}
-                   totalItems={data.length}
-                   pageSelected={pageSelected}
-                    />
+        {renderError()}
+        <div className='searchbar-container'>
+          <form className="searchbar">
+            <input type="text"
+                  placeholder='Search'
+                  onChange={handleSearchChange}
+                  value={search}
+                  >
+            </input>
+            <button onClick={handleSubmit} type="submit">GO</button>
+          </form>
+        </div>
+        <div className='paginate-container'>
+          < Paginate currentPage={currentPage}
+                    itemsPerPage={itemsPerPage}
+                    totalItems={data.length}
+                    pageSelected={pageSelected}
+                      />
+        </div>
         <div className="gif-container">
-          <RenderSelectedGif selectedGif={selectedGif}/>
-          <div className="gif-list">{renderGif()}</div>
+          <div>
+            <h2>Selected Gif</h2>
+            <RenderSelectedGif selectedGif={selectedGif}/>
+          </div>
+          <div>
+            <h2>Gif list</h2>
+            <div className="gif-list">
+              {renderGif()}
+            </div>
+          </div>
         </div>
       </div>
     )
-
 };
 
 export default Gif;

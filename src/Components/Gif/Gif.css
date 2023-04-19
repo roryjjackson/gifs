@@ -1,8 +1,75 @@
 .gif-container {
   display: flex;
-
 }
 
 .selected-gif {
   width: 50vw;
+}
+
+.searchbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.searchbar button {
+  background-color: #FF686B;
+  border: none;
+  border-top-right-radius: 10px;
+  height: 50px;
+  width: 100px;
+  border-bottom-right-radius: 10px;
+}
+
+.searchbar input {
+  background-color: #ffffff;
+  border: none;
+  height: 50px;
+  padding: 10px;
+}
+
+.paginate-container {
+  justify-content: right;
+  display: flex;
+  margin-right: 30px;
+}
+
+a.page-link {
+  border: none;
+  margin-top: 20px;
+  color: #FF686B;
+}
+
+.gif-container {
+  display: flex;
+}
+
+.gif-container h2 {
+  color: #FF686B;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.selected-gif {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.gif-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.gif {
+  height: 300px;
+  width: 300px;
+  /* margin: 20px; */
+  /* overflow: hidden; */
+  object-fit: cover;
+
 }

@@ -1,0 +1,5 @@
+.selected-gif {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
